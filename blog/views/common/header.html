@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><%=title%></title>
+<style>
+	body,div,ul,li,a{margin:0;padding:0;}
+	li{list-style:none;}
+	a{text-decoration:none;}
+	.nav{overflow:hidden;background:#666666;padding:10px 20px;border-radius:10px;margin:10px 5px}
+	.nav li{float:left;width:100px;}
+	.nav li a{color:#fff;font-size:16px;}
+	textarea{resize:none;outline:none;width:500px;height:200px}
+</style>
+
+</head>
+
+<body>
+	<div class="nav">
+	<ul>
+	<li><a href="/">首页</a></li>
+	<% if(user){ %>
+		<li><a href="/user/<%=user._id%>"><%=user.name%></a></li>
+		<li><a href="/add">发表</a></li>
+		<li><a href="/list">内容列表</a></li>
+		<li><a href="/exit">退出</a></li>
+	<% }else{  %>
+		<li><a href="/login">登陆</a></li> 
+		<li><a href="/reg">	 注册</a></li>
+	<% } %>
+	</ul>
+	</div>

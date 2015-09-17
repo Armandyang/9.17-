@@ -1,0 +1,18 @@
+<% include common/header.html %>
+<table border="1px solid #eee" style="border-collapse:collapse;">
+	<tr>
+		<th>_id</th><th>作者</th><th>标题</th><th>内容</th>
+	</tr>
+	<tr>
+	<% list.forEach(function( list ){ %>
+	
+	<td><%=list._id%></td>
+		<td><a href="/user/<%=list.author._id%>"><%=list.author.name%></a></td>
+		<td><a href="/view/<%=list._id%>"><%=list.title%></a></td>
+		<td><%=list.content%></td>
+	</tr>
+	
+	<% }); %>
+		
+</table>
+<% include common/footer.html %>
